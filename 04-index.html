@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios HTML</title>
+</head>
+
+<body>
+    <header>
+        Exercicios HTML
+    </header>
+    <nav>
+        <br>
+        <a href="exercicios/teste.html">00-Teste</a>
+        <a href="exercicios/temp.html">00-Teste</a>
+    </nav>
+
+    <section id="conteudo"></section>
+    <footer>
+        <br>
+        Curso de Web Moderno
+    </footer>
+    <script>
+        document.querySelectorAll('a').forEach(link => {
+            const conteudo = document.getElementById('conteudo');
+
+            link.onclick = function (e) {
+                e.preventDefault();
+                fetch(link.href) // essa função passa o link da pagina 
+                    .then(resp => resp.text()) //Quando a função for resolvida ai vamos para o html, text é uma função e não um conteudo
+                    .then(html => conteudo.innerHTML = html); // atraves do innerHTML vai substituir o conteudo da section
+            }
+        })
+    </script>
+</body>
+
+</html>
