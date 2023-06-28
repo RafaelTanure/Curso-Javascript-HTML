@@ -1,0 +1,50 @@
+<!--Aqui utilizamos o h1 para titulo o ul para sobre titulo o li para representa um linha com ponto-->
+<h1>Projeto</h1>
+<ul class="tree">
+    <li>
+        <span wm-folder>Backend</span>
+        <ul>
+            <li>
+                <span wm-folder>app</span>
+                <ul>
+                    <li>produto.js</li> 
+                    <li>usuario.js</li>
+                    <li>venda.js</li>
+                </ul>
+            </li>
+            <li>
+                <span wm-folder>config</span>
+                <ul>
+                    <li>banco.js</li>
+                    <li>rotas.js</li>
+                    <li>servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span wm-folder>Frontend</span>
+        <ul>
+            <li>
+                <span wm-folder>public</span>
+                <ul>
+                    <li>app.css</li>
+                    <li>app.js</li>
+                    <li>index.js</li>
+                </ul>
+        </ul>
+    </li>
+</ul>
+<!--Utilizamos o link já com css para incrementar nossa árvore.-->
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+
+<script>
+    //Criamos uma função para pegar tudo que está em wm-folder e retorne no console para ter a ação do clique.
+    document.querySelectorAll('[wm-folder]').forEach(folder => {
+        folder.onclick = function (e) { // Fizemos em formato de função. 
+            const ul = folder.nextElementSibling;
+            const d = ul.style.display; // A partir da ul pegamos a visibilade o display do elemento 
+            ul.style.display = d === 'none' ? 'block' : 'none';// Utilizamos o style display e o ternario 
+        }
+    })
+</script>
