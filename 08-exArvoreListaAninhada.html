@@ -39,10 +39,10 @@
 <link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
 
 <script>
-    //Criamos uma função para pegar tudo que está em wm-folder e retorne no console para ter a ação do clique.
-    document.querySelectorAll('[wm-folder]').forEach(folder => {
+    //Criamos uma função para pegar tudo que está em wm-folder e retorne no console para ter a ação do clique.QuerySelector vai retornar o primeiro elemento dentro do documento 
+    document.querySelectorAll('[wm-folder]').forEach(folder => { 
         folder.onclick = function (e) { // Fizemos em formato de função. 
-            const ul = folder.nextElementSibling;
+            const ul = folder.nextElementSibling; //Esse metodo retorna o elemento abaixo HTMLColections com os filhos  retorna o filho indice 0 
             const d = ul.style.display; // A partir da ul pegamos a visibilade o display do elemento 
             ul.style.display = d === 'none' ? 'block' : 'none';// Utilizamos o style display e o ternario 
         }
