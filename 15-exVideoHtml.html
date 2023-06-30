@@ -1,0 +1,30 @@
+<iframe id="meuVideo" width="800" height="450" src="https://www.youtube.com/embed/mJf8Qz8IYNE" controls autoplay
+    controlsList="nodownload">
+    Seu Browser não suporta a tag de video
+</iframe>
+
+<div wm-progesso="meuVideo" class="progresso">
+    <div></div>
+</div>
+
+<div>
+    <button wm-play="meuVideo">Play</button>
+    <button wm-pause="meuVideo">Pause</button>
+</div>
+
+<style>
+    .progresso {
+        height: 20px;
+        width: 500px;
+        border: solid 1px #444;
+        margin: 20px;
+    }
+
+    .progesso > div {
+        background-color: red;
+        color: #fff;
+        height: 100%;
+        text-align:right;
+        font-size: 14px;
+    }
+</style>
